@@ -12,7 +12,7 @@ module UploadProgress
   def upload_progress(options = {})
     package 'apache2-threaded-dev', :ensure => :installed
 
-    exec 'install_xsendfile',
+    exec 'install_upload_progress',
       :cwd => '/tmp',
       :command => [
         'wget http://github.com/drogus/apache-upload-progress-module/raw/eb87ac0b871857202b058563f107c97dc13d68d8/mod_upload_progress.c',
