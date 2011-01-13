@@ -7,7 +7,6 @@ module UploadProgress
   #
   # Then include the plugin and call the recipe(s) you need:
   #
-  #  plugin :upload_progress
   #  recipe :upload_progress
   def upload_progress(options = {})
     package 'apache2-threaded-dev', :ensure => :installed
@@ -15,7 +14,7 @@ module UploadProgress
     exec 'install_upload_progress',
       :cwd => '/tmp',
       :command => [
-        'wget http://github.com/drogus/apache-upload-progress-module/raw/eb87ac0b871857202b058563f107c97dc13d68d8/mod_upload_progress.c',
+        'wget https://github.com/drogus/apache-upload-progress-module/raw/2dd248436a0415f73a1db5b129c2ac5b3a0fb44c/mod_upload_progress.c --no-check-certificate',
         'apxs2 -cia mod_upload_progress.c'
       ].join(' && '),
       :require => package('apache2-threaded-dev'),
