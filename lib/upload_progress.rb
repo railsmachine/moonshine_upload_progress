@@ -11,6 +11,8 @@ module UploadProgress
   def upload_progress(options = {})
     package 'apache2-threaded-dev', :ensure => :installed
 
+    # --no-check-certificate is needed because GitHub has SSL turned on all the time
+    # but wget doesn't understand the wildcard SSL certificate they use (*.github.com)
     exec 'install_upload_progress',
       :cwd => '/tmp',
       :command => [
