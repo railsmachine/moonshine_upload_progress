@@ -30,5 +30,4 @@ Then re-deploy.
 
 * <tt>script/plugin install git://github.com/railsmachine/moonshine_upload_progress.git</tt>
 * Include the plugin and recipe(s) in your Moonshine manifest
-    plugin :upload_progress
     recipe :upload_progress
