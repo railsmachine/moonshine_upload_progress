@@ -1,5 +1,7 @@
 = Moonshine_UploadProgress
 
+IMPORTANT: Moonshine_UploadProgress is no longer supported.
+
 === A plugin for Moonshine[http://github.com/railsmachine/moonshine]
 
 A plugin for installing and managing mod_upload_progress[http://www.railsillustrated.com/screencast-file-uploads-progress-in-rails-passenger.html].
@@ -32,3 +34,7 @@ Then re-deploy.
 * Include the plugin and recipe(s) in your Moonshine manifest
     plugin :upload_progress
     recipe :upload_progress
+
+***
+
+Unless otherwise specified, all content copyright &copy; 2014, [Rails Machine, LLC](http://railsmachine.com)
