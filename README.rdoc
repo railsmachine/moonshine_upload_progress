@@ -35,6 +35,4 @@ Then re-deploy.
     plugin :upload_progress
     recipe :upload_progress
 
-***
-
-Unless otherwise specified, all content copyright &copy; 2014, [Rails Machine, LLC](http://railsmachine.com)
+Unless otherwise specified, all content copyright (C) 2014, Rails Machine
