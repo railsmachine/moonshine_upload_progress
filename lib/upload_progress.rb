@@ -15,7 +15,7 @@ module UploadProgress
     exec 'install_upload_progress',
       :cwd => '/tmp',
       :command => [
-        'wget http://github.com/drogus/apache-upload-progress-module/raw/eb87ac0b871857202b058563f107c97dc13d68d8/mod_upload_progress.c',
+        'wget https://raw.githubusercontent.com/drogus/apache-upload-progress-module/c9d554e7bac5abd8d5880d55528aee55fac412d4/mod_upload_progress.c --no-check-certificate',
         'apxs2 -cia mod_upload_progress.c'
       ].join(' && '),
       :require => package('apache2-threaded-dev'),
@@ -28,7 +28,7 @@ module UploadProgress
 UploadProgressSharedMemorySize #{ options[:shared_memory_size] || '1024000'}
         """,
         :mode => '644',
-        :notify => service('apache2')  
+        :notify => service('apache2')
 
     file '/etc/apache2/mods-available/upload_progress.load',
       :alias => 'load_upload_progress',
@@ -39,5 +39,5 @@ UploadProgressSharedMemorySize #{ options[:shared_memory_size] || '1024000'}
 
    a2enmod 'upload_progress', :require => file('load_upload_progress')
   end
-  
+
 end
